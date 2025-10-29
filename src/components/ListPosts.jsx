@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getPosts } from '../services/post'
+import Post from './Post.jsx'
 
 const ListPosts = () => {
     const [posts, setPosts] = useState([]);
@@ -13,16 +14,12 @@ const ListPosts = () => {
     }, [])
     
   return (
-    <>
-        <ul>
+
+        <>
             {posts.map(post => (
-                <li key={post.id} className="mb-4 p-4 border border-gray-300 rounded">
-                    <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-                    <p className="text-gray-700">{post.body}</p>
-                </li>
+                <Post key={post.id} post={post} params={post.id%2 ? "mr-80 text-blue-800"  :  "bg-green-500 flex flex-row ml-80 mr-auto" } />
             ))}
-        </ul>
-    </>
+        </>
   )
 }
 
