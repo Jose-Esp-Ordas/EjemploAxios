@@ -17,7 +17,7 @@ const ListPosts = () => {
 
         <>
             {posts.map(post => (
-                <Post key={post.id} post={post} params={post.id%2 ? "mr-80 text-blue-800"  :  "bg-green-500 flex flex-row ml-80 mr-auto" } />
+                <Post key={post.id} post={post} params={post.id%2 ? "mr-[40vw] text-blue-900 hover:shadow-lg hover:my-8"  :  "bg-green-500 ml-[40vw] hover:shadow-lg hover:my-8" } />
             ))}
         </>
   )
